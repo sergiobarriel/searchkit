@@ -1,1 +1,1 @@
-# searchkit
+# 🔎 SearchKit
