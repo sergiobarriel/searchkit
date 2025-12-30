@@ -2,10 +2,11 @@
 
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <Authors>Sergio Barriel</Authors>
         <PackageProjectUrl>https://github.com/sergiobarriel/searchkit</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/sergiobarriel/searchkit</RepositoryUrl>
+        <Description>Lightweight base models library for implementing search, pagination, and ordering patterns in .NET applications</Description>
     </PropertyGroup>
 
 </Project>
