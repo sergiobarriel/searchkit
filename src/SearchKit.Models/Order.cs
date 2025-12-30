@@ -15,7 +15,8 @@ namespace SearchKit.Models
         public string Property { get; }
         public OrderDirection Direction { get; }
         
-        public bool IsAscending => Direction == OrderDirection.Ascending;
-        public bool IsDescending => Direction == OrderDirection.Descending;
+        public bool IsAscending() => Direction == OrderDirection.Ascending;
+        public bool IsDescending() => Direction == OrderDirection.Descending;
+        public bool IsValid() => !string.IsNullOrWhiteSpace(Property);
     }
 }

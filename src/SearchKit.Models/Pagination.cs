@@ -15,5 +15,7 @@ namespace SearchKit.Models
         
         public int First { get; }
         public int Size { get; }
+
+        public bool IsValid() => First >= 0 && Size >= 1;
     }
 }
