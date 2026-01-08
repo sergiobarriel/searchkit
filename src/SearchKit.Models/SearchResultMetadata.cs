@@ -7,6 +7,6 @@ namespace SearchKit.Models
             ElapsedMilliseconds = elapsedMilliseconds;
         }
         
-        public long ElapsedMilliseconds { get; set; }
+        public long ElapsedMilliseconds { get; }
     }
 }
