@@ -47,12 +47,12 @@ namespace SearchKit.Models
 
         private static readonly HashSet<string> Ascending = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            "a", "asc", "ascending", "up", "oldest", "0", "new"
+            "a", "asc", "ascending", "up", "oldest", "0", "new", "first", "earliest"
         };
 
         private static readonly HashSet<string> Descending = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            "d", "desc", "descending", "down", "newest", "1", "old"
+            "d", "desc", "descending", "down", "newest", "1", "old", "last", "latest"
         };
     }
 }
