@@ -6,7 +6,7 @@ namespace SearchKit.Models
     {
         public Pagination(int first, int size)
         {
-            if (first < 0) throw new ArgumentOutOfRangeException(nameof(first), $"{First} cannot be negative");
+            if (first < 1) throw new ArgumentOutOfRangeException(nameof(first), $"{First} cannot be less than one");
             if (size < 1) throw new ArgumentOutOfRangeException(nameof(size), $"{size} must be greater or equal than one");
             
             First = first;
@@ -16,6 +16,6 @@ namespace SearchKit.Models
         public int First { get; }
         public int Size { get; }
 
-        public bool IsValid() => First >= 0 && Size >= 1;
+        public bool IsValid() => First >= 1 && Size >= 1;
     }
 }
