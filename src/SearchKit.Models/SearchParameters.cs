@@ -6,27 +6,42 @@ namespace SearchKit.Models
 {
     public abstract class SearchParameters
     {
-        public Pagination Pagination { get; }
+        public OffsetPagination OffsetPagination { get; }
+        public CursorPagination CursorPagination { get; }
 
         public IEnumerable<Order> Orders { get; }
 
-        protected SearchParameters(Pagination pagination, Order order)
+        protected SearchParameters(OffsetPagination offsetPagination, Order order)
         {
-            Pagination = pagination;            
+            OffsetPagination = offsetPagination;            
             Orders = new List<Order> { order };
         }
 
-         protected SearchParameters(Pagination pagination, IEnumerable<Order> orders)
+        protected SearchParameters(OffsetPagination offsetPagination, IEnumerable<Order> orders)
         {
-            Pagination = pagination;            
+            OffsetPagination = offsetPagination;            
             Orders = orders;
         }
 
-        [Obsolete("Use Orders property instead")]
-        public Order Order => Orders?.FirstOrDefault();
+        protected SearchParameters(CursorPagination cursorPagination, Order order)
+        {
+            CursorPagination = cursorPagination;
+            Orders = new List<Order> { order };
+        }
 
-        public bool HasPagination() => Pagination != null;
-        public bool HasNoPagination() => Pagination == null;
+        protected SearchParameters(CursorPagination cursorPagination, IEnumerable<Order> orders)
+        {
+            CursorPagination = cursorPagination;
+            Orders = orders;
+        }
+
+        public bool HasOffsetPagination() => OffsetPagination != null;
+        public bool HasNoOffsetPagination() => OffsetPagination == null;
+        public bool HasCursorPagination() => CursorPagination != null;
+        public bool HasNoCursorPagination() => CursorPagination == null;
+
+        public bool HasPagination() => HasOffsetPagination() || HasCursorPagination();
+
         public bool HasOrders() => Orders != null && Orders.Any();
         public bool HasMultipleOrders() => Orders != null && Orders.Count() > 1;
         public bool HasSingleOrder() => Orders != null && Orders.Count() == 1;

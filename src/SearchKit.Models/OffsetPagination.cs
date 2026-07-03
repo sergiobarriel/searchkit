@@ -2,11 +2,11 @@
 
 namespace SearchKit.Models
 {
-    public class Pagination
+    public class OffsetPagination
     {
-        public Pagination(int first, int size)
+        public OffsetPagination(int first, int size)
         {
-            if (first < 1) throw new ArgumentOutOfRangeException(nameof(first), $"{First} cannot be less than one");
+            if (first < 1) throw new ArgumentOutOfRangeException(nameof(first), $"{first} cannot be less than one");
             if (size < 1) throw new ArgumentOutOfRangeException(nameof(size), $"{size} must be greater or equal than one");
             
             First = first;
