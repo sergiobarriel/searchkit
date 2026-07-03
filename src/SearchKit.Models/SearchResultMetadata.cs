@@ -6,7 +6,14 @@ namespace SearchKit.Models
         {
             ElapsedMilliseconds = elapsedMilliseconds;
         }
+
+        public SearchResultMetadata(long elapsedMilliseconds, double cost)
+        {
+            ElapsedMilliseconds = elapsedMilliseconds;
+            Cost = cost;
+        }
         
         public long ElapsedMilliseconds { get; }
+        public double Cost { get; }
     }
 }
