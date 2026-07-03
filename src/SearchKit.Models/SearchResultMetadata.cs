@@ -2,15 +2,11 @@ namespace SearchKit.Models
 {
     public class SearchResultMetadata
     {
-        public SearchResultMetadata(long elapsedMilliseconds)
-        {
-            ElapsedMilliseconds = elapsedMilliseconds;
-        }
 
-        public SearchResultMetadata(long elapsedMilliseconds, double cost)
+        public SearchResultMetadata(long? elapsedMilliseconds = null, double? cost = null)
         {
-            ElapsedMilliseconds = elapsedMilliseconds;
-            Cost = cost;
+            ElapsedMilliseconds = elapsedMilliseconds ?? 0;
+            Cost = cost ?? 0;
         }
         
         public long ElapsedMilliseconds { get; }
