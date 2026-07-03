@@ -8,7 +8,10 @@ namespace SearchKit.Models
         {
             if (size < 1) throw new ArgumentOutOfRangeException(nameof(size), $"{size} must be greater or equal than one");
             
-            ContinuationToken = continuationToken;
+            ContinuationToken = string.IsNullOrEmpty(continuationToken) 
+                ? null 
+                : continuationToken;
+                
             Size = size;
         }
         
